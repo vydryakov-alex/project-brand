@@ -14,6 +14,10 @@ buttonClose.addEventListener('click', function() {
     buttonClose.classList.add('hide');
 })
 
+
+const mediaQuery = window.matchMedia('(max-width: 767px)')
+function handleTabletChange(e) {
+  if (e.matches) {
 // свайпер
 
 const swiper = new Swiper('.swiper', {
@@ -23,6 +27,12 @@ const swiper = new Swiper('.swiper', {
   
     // If we need pagination
     pagination: {
-      el: '.swiper-pagination',
+      el: '.swiper-pagination'
     }
   });
+
+
+}
+}
+mediaQuery.addListener(handleTabletChange)
+handleTabletChange(mediaQuery)
